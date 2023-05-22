@@ -1,3 +1,14 @@
+<?php
+var_dump($_POST);
+ if(isset($_POST["submit"])){
+    $lib=$_POST["libelle"];
+    $qt=$_POST["qt"];
+    $pu=$_POST["pu"];
+    $sql="INSERT INTO produits (Libelle,Quantite,Prix) values ('$lib',$qt,$pu)";
+    mysqli_query($connexion,$sql);
+    header('location:index.php');
+ }
+?>
 <div class="card col-md-8 offset-2 mt-5">
 
     <div class="card-header bg-warning">Ajout produit</div>
